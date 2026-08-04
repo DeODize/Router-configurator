@@ -3,6 +3,7 @@
 # update system
 sudo apt update
 sudo apt upgrade -y
+sudo apt install bridge-utils
 
 # execute all scripts in ./scripts
 if [ -d ~/scripts ]; then
