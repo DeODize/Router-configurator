@@ -1,3 +1,3 @@
-Change network configuration before execution of script.
-Update configs if its needed.
-Add your own scripts in ./scripts
+Change network configuration before running the script.
+Update the configs if necessary.
+Add your own scripts to ./scripts
