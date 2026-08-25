@@ -1,0 +1,31 @@
+[DEFAULT]
+# Блокировать на 1 час (можно изменить на 1d, 1w, или -1 для вечной блокировки)
+bantime = 1h
+
+# Период, в течение которого считаются неудачные попытки (10 минут)
+findtime = 10m
+
+# Количество неудачных попыток до блокировки
+maxretry = 3
+
+# ВАЖНО: Указываем nftables вместо iptables!
+banaction = nftables[type=multiport]
+banaction_allports = nftables[type=allports]
+
+# Уведомления на почту (опционально, требует настроенного sendmail)
+# destemail = your@email.com
+# sendername = Fail2Ban
+# mta = sendmail
+# action = %(action_mw)s
+
+# Игнорировать локальную сеть (чтобы случайно не заблокировать себя)
+ignoreip = 127.0.0.1/8 ::1 192.168.1.0/24
+
+# === ВКЛЮЧЕНИЕ ЗАЩИТЫ SSH ===
+[sshd]
+enabled = true
+port = 2221
+backend = systemd
+filter = sshd
+logpath = /var/log/secure
+maxretry = 3
