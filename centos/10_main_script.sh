@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # add repositories
-#sudo dnf update -y
-#sudo dnf config-manager --set-enabled crb
-#sudo dnf install epel-release -y
-#dnf makecache
+sudo dnf update -y
+sudo dnf config-manager --set-enabled crb
+sudo dnf install epel-release -y
+dnf makecache
 
 # execute all scripts in ./scripts
 if [ -d ./scripts ]; then
@@ -15,3 +15,4 @@ if [ -d ./scripts ]; then
     done
 fi
 
+sudo systemctl daemon-reload
